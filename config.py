@@ -5,6 +5,7 @@ PROMISED_DOWN = 90
 PROMISED_UP = 10
 TWITTER_EMAIL = "YOUR TWITTER EMAIL"
 TWITTER_PASSWORD = "YOUR TWITTER PASSWORD"
+ISP_NAME = "YOUR ISP"
 
 chrome_options = Options()
 chrome_options.headless = True
