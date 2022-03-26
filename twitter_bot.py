@@ -69,7 +69,7 @@ class ISPComplainerTwitterBot:
                 password.send_keys(Keys.ENTER)
 
                 print("Tweeting complaint...")
-                tweet = f'Testing :) -JH'
+                tweet = f'Hey {config.ISP_NAME} Why is my internet speed DOWN: {self.down} UP: {self.up} when you promised DOWN: {config.PROMISED_DOWN} UP: {config.PROMISED_UP} >:('
                 tweet_textbox = self.driver.find_element(by=By.XPATH, value='//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div')
                 tweet_textbox.send_keys(tweet)
                 time.sleep(2)
