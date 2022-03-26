@@ -1,6 +1,6 @@
 from selenium.webdriver.chrome.options import Options
 
-CHROME_DRIVER_PATH = "C:/Users/jiaxe/chromedriver/chromedriver.exe"
+CHROME_DRIVER_PATH = "PATH/TO/YOUR/chromedriver.exe"
 PROMISED_DOWN = 90
 PROMISED_UP = 10
 TWITTER_EMAIL = "YOUR TWITTER EMAIL"
