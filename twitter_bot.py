@@ -1,6 +1,7 @@
 import time
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import config
@@ -67,15 +68,15 @@ class ISPComplainerTwitterBot:
                 password.send_keys(config.TWITTER_PASSWORD)
                 time.sleep(2)
                 password.send_keys(Keys.ENTER)
+                time.sleep(5)
 
                 print("Tweeting complaint...")
                 tweet = f'Hey {config.ISP_NAME} Why is my internet speed DOWN: {self.down} UP: {self.up} when you promised DOWN: {config.PROMISED_DOWN} UP: {config.PROMISED_UP} >:('
-                tweet_textbox = self.driver.find_element(by=By.XPATH, value='//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/label/div[1]/div/div/div/div/div[2]/div/div/div/div')
+                # tweet = "Testing :)"
+                tweet_textbox = self.driver.find_element(by=By.CLASS_NAME, value='public-DraftStyleDefault-block')
                 tweet_textbox.send_keys(tweet)
                 time.sleep(2)
-                tweet_button = self.driver.find_element(by=By.XPATH, value='//*[@id="react-root"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[3]/div/div/div[2]/div[3]/div/span/span')
-                tweet_button.click()
-
+                ActionChains(self.driver).key_down(Keys.CONTROL).key_down(Keys.ENTER).perform()
                 print("Tweeted!")
 
             except NoSuchElementException:
