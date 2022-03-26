@@ -48,7 +48,7 @@ class ISPComplainerTwitterBot:
         print(f"UPLOAD SPEED: {str(self.up)}")
 
     def tweet_at_provider(self):
-        if self.up < config.PROMISED_UP and self.down < config.PROMISED_UP:
+        if self.up < config.PROMISED_UP and self.down < config.PROMISED_DOWN:
             print("Speeds seem to be unacceptable.")
             print(f"Promised DOWNLOAD SPEED: {config.PROMISED_DOWN}")
             print(f"Promised UPLOAD SPEED: {config.PROMISED_UP}")
